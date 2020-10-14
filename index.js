@@ -27,10 +27,8 @@ var httpsServer = https.createServer(httpsServerOptions,function(req,res){
 });
 
 // Start the HTTPS server
-httpsServer.listen(config.httpsPort,function(){
- console.log('The HTTPS server is running on port '+config.httpsPort);
-});
-
+httpsServer.listen(config.httpsPort);
+console.log('The HTTPS server is running on port '+config.httpsPort);
 // All the server logic for both the http and https server
 var unifiedServer = function(req,res){
 
@@ -98,5 +96,6 @@ var unifiedServer = function(req,res){
 var router = {
 'ping' : handlers.ping,
 'users' : handlers.users,
-'tokens' : handlers.tokens
+'tokens' : handlers.tokens,
+'checks' : handlers.checks
 };
